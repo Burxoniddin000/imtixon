@@ -1,6 +1,16 @@
-body{
+body {
     box-sizing: border-box;
     font-family: consolas, monospace;
     margin: 0;
     padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+.input {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+    height: 40px;
+    padding-left: 10px;
 }

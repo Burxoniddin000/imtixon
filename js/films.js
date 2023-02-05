@@ -406,11 +406,13 @@ var films = [
 ];
 let elInput = document.querySelector(".input");
 let newflim = document.querySelector(".films");
+let Janer = document.querySelector("#janir");
 
-function arr() {
+function move(array) {
    newflim.textContent = "";
-   films.forEach((film) => {
+   array.forEach((film) => {
       let dat = new Date(film.release_date);
+      let li = document.createElement("li");
       let year = dat.getFullYear();
       let month = dat.getMonth() + 1;
       let day = dat.getDate();
@@ -431,8 +433,6 @@ function arr() {
       }
 
       let rezlatYers = `${hour}:${minutes}/${day}/${month}/${year}`;
-
-      let li = document.createElement("li");
       let id = film.id;
       li.innerHTML = `
  <li class="items">
@@ -446,12 +446,14 @@ function arr() {
        </div>
    </div>
 </li>`
+      newflim.appendChild(li)
 
-      newflim.appendChild(li);
+
    })
 }
 
-arr()
+move(films)
+
 newflim.addEventListener("click", function (evt) {
 
    let namber = evt.target
@@ -467,17 +469,37 @@ newflim.addEventListener("click", function (evt) {
          }
       }
       films = retur;
-      arr(films)
+      move(films)
    }
 })
 
-elInput.addEventListener('input', () => {
-   let value = elInput.value;
-   let sorarr = [];
-   films.forEach((search) => { 
-         if (search.title.toLocaleString().includes(value.toLocaleString())) {
-            sorarr.push(search)
-         }
-   })
-   arr(sorarr)
-})
+elInput.addEventListener("input", () => {
+   let valu = elInput.value;
+   let newarray = [];
+
+   films.forEach((sarch) => {
+      if (sarch.title.toLocaleLowerCase().includes(valu.toLocaleLowerCase())) {
+         newarray.push(sarch);
+      }
+   });
+   move(newarray);
+});
+
+
+
+Janer.addEventListener("change", () => {
+   let value = Janer.value;
+   let all = [];
+   let genres = [];
+ 
+   films.forEach((janr) => {
+     if (janr.genres.includes(value)) {
+       genres.push(janr);
+       move(genres);
+     } else if (value == "All") {
+       all.push(janr);
+       move(all);
+     }
+   });
+ });
+

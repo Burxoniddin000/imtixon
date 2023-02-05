@@ -406,33 +406,34 @@ var films = [
 ];
 
 let newflim = document.querySelector(".films");
+function arr() {
+   newflim.textContent ="";
+   films.forEach((film) => {
+      let dat = new Date(film.release_date);
+      let year = dat.getFullYear();
+      let month = dat.getMonth() + 1;
+      let day = dat.getDate();
+      let hour = dat.getHours();
+      let minutes = dat.getMinutes();
 
-films.forEach((film) => {
-   let dat = new Date(film.release_date);
-   let year = dat.getFullYear();
-   let month = dat.getMonth() + 1;
-   let day = dat.getDate();
-   let hour = dat.getHours();
-   let minutes = dat.getMinutes();
+      if (month < 10) {
+         month = "0" + month;
+      }
+      if (day < 10) {
+         day = "0" + day;
+      }
+      if (hour < 10) {
+         hour = "0" + hour;
+      }
+      if (minutes < 10) {
+         minutes = "0" + minutes;
+      }
 
-   if (month < 10) {
-     month = "0" + month;
-   }
-   if (day < 10) {
-     day = "0" + day;
-   }
-   if (hour < 10) {
-     hour = "0" + hour;
-   }
-   if (minutes < 10) {
-     minutes = "0" + minutes;
-   }
-   
-   let rezlatYers = `${hour}:${minutes}/${day}/${month}/${year}`;
+      let rezlatYers = `${hour}:${minutes}/${day}/${month}/${year}`;
 
-   let li = document.createElement("li");
-   let id = film.id;
-   li.innerHTML = `
+      let li = document.createElement("li");
+      let id = film.id;
+      li.innerHTML = `
  <li class="items">
    <div class="item">
        <img class="img" src=${film.poster} alt="">
@@ -440,15 +441,31 @@ films.forEach((film) => {
          <h2 class="tile">Nomi:${film.title}</h2>
          <p class="taxt"> Genres:${film.genres}</p>
          <p class="fullyers">${rezlatYers}</p>
-         <button id="${id}" class="btn bg-danger text-light">Menga yoqmadi</button>
+         <button data-id="${id}" class="btn bg-danger text-light">Menga yoqmadi</button>
        </div>
    </div>
 </li>`
-   newflim.append(li)
-})
-
-let btn = document.querySelector(".btn")
-
-   btn.addEventListener("click",()=>{
-      console.log("salom");
+     
+      newflim.appendChild(li);
    })
+}
+
+arr()
+newflim.addEventListener("click", function (evt) {
+
+   let namber = evt.target
+
+   if (namber.className.includes("btn")) {
+      let id = namber.dataset.id
+      let retur = [];
+      for (let i = 0; i < films.length; i++) {
+         let delit = films[i];
+
+         if (delit.id !== id) {
+            retur.push(delit);
+         }
+      }
+      films = retur;
+      arr(films)
+   }
+})

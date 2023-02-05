@@ -3,10 +3,14 @@ body {
     font-family: consolas, monospace;
     margin: 0;
     padding: 0;
+    border-color: #000;
 }
-ul,li{
+
+ul,
+li {
     list-style: none;
 }
+
 .input {
     width: 90%;
     margin: 0 auto;
@@ -14,3 +18,65 @@ ul,li{
     height: 40px;
     padding-left: 10px;
 }
+
+.films {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.item {
+    width: 300px;
+    height: 525px;
+    text-align: center;
+    border: 2px solid rgb(27, 25, 25);
+    background-color: rgb(27, 25, 25);
+    box-sizing: 0 0 5px 5px #fff;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.item,
+.item {
+    margin: 10px 0;
+}
+
+.img {
+    padding-bottom: 15px;
+    width: 260px;
+    border-radius: 7px;
+
+}
+
+.div {
+    height: 100px;
+    background-color: rgb(89, 89, 89);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.tile {
+    margin: 0;
+    color: #fff;
+    font-size: 17px;
+}
+
+.taxt {
+    font-size: 15px;
+    margin: 0;
+    color: #fff;
+    padding-top: 5px;
+    max-width: 260px;
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 7px;
+}
+

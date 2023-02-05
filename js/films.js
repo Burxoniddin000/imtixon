@@ -404,3 +404,31 @@ var films = [
       genres: ["Music", "Documentary"],
    },
 ];
+
+let newflim = document.querySelector(".films");
+
+films.forEach((film) => {
+   let li = document.createElement("li");
+   let id = film.id;
+   li.innerHTML = `
+ <li class="items">
+   <div class="item">
+       <img class="img" src=${film.poster} alt="">
+       <div class="div">
+         <h2 class="tile">Nomi:${film.title}</h2>
+         <p class="taxt"> Genres:${film.genres}</p>
+         <button id="${id}" class="btn">Menga yoqmadi</button>
+       </div>
+   </div>
+</li>`
+   newflim.append(li)
+})
+
+let btn = document.querySelector(".btn")
+
+films.forEach((film)=>{
+   let id = film.id;
+   btn.addEventListener("click",()=>{
+      console.log("salom");
+   })
+})

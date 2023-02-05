@@ -17,6 +17,7 @@ li {
     border-radius: 8px;
     height: 40px;
     padding-left: 10px;
+    margin: 0 auto;
 }
 
 .films {
@@ -27,8 +28,8 @@ li {
 }
 
 .item {
-    width: 300px;
-    height: 525px;
+    width: 340px;
+    height: 620px;
     text-align: center;
     border: 2px solid rgb(27, 25, 25);
     background-color: rgb(27, 25, 25);
@@ -44,13 +45,15 @@ li {
 
 .img {
     padding-bottom: 15px;
-    width: 260px;
+    width:  315px;
+    height: 410px;
     border-radius: 7px;
 
 }
 
 .div {
-    height: 100px;
+    position: relative;
+    height: 190px;
     background-color: rgb(89, 89, 89);
     border-radius: 8px;
     padding: 5px;
@@ -68,9 +71,11 @@ li {
     color: #fff;
     padding-top: 5px;
     max-width: 260px;
+    margin: 0 auto;
 }
 
 .btn {
+    position: absolute;
     margin-top: 10px;
     padding: 8px;
     font-size: 16px;
@@ -78,5 +83,24 @@ li {
     background-color: red;
     border: none;
     border-radius: 7px;
+    bottom: 7px;
+    right: 50px;
+    left: 50px;
 }
 
+.z-index{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.optio{
+border-radius: 8px;
+padding: 5px;
+color: rgb(87, 86, 86);
+}
+.fullyers{
+    margin-top: 8px;
+    color: #fff;
+}

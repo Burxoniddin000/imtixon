@@ -408,6 +408,28 @@ var films = [
 let newflim = document.querySelector(".films");
 
 films.forEach((film) => {
+   let dat = new Date(film.release_date);
+   let year = dat.getFullYear();
+   let month = dat.getMonth() + 1;
+   let day = dat.getDate();
+   let hour = dat.getHours();
+   let minutes = dat.getMinutes();
+
+   if (month < 10) {
+     month = "0" + month;
+   }
+   if (day < 10) {
+     day = "0" + day;
+   }
+   if (hour < 10) {
+     hour = "0" + hour;
+   }
+   if (minutes < 10) {
+     minutes = "0" + minutes;
+   }
+   
+   let rezlatYers = `${hour}:${minutes}/${day}/${month}/${year}`;
+
    let li = document.createElement("li");
    let id = film.id;
    li.innerHTML = `
@@ -417,7 +439,8 @@ films.forEach((film) => {
        <div class="div">
          <h2 class="tile">Nomi:${film.title}</h2>
          <p class="taxt"> Genres:${film.genres}</p>
-         <button id="${id}" class="btn">Menga yoqmadi</button>
+         <p class="fullyers">${rezlatYers}</p>
+         <button id="${id}" class="btn bg-danger text-light">Menga yoqmadi</button>
        </div>
    </div>
 </li>`
@@ -426,9 +449,6 @@ films.forEach((film) => {
 
 let btn = document.querySelector(".btn")
 
-films.forEach((film)=>{
-   let id = film.id;
    btn.addEventListener("click",()=>{
       console.log("salom");
    })
-})

@@ -404,6 +404,7 @@ var films = [
       genres: ["Music", "Documentary"],
    },
 ];
+document.body.style.background="#212529"
 let elInput = document.querySelector(".input");
 let newflim = document.querySelector(".films");
 let Janer = document.querySelector("#janir");
@@ -491,15 +492,39 @@ Janer.addEventListener("change", () => {
    let value = Janer.value;
    let all = [];
    let genres = [];
- 
-   films.forEach((janr) => {
-     if (janr.genres.includes(value)) {
-       genres.push(janr);
-       move(genres);
-     } else if (value == "All") {
-       all.push(janr);
-       move(all);
-     }
-   });
- });
 
+   films.forEach((janr) => {
+      if (janr.genres.includes(value)) {
+         genres.push(janr);
+         move(genres);
+      } else if (value == "All") {
+         all.push(janr);
+         move(all);
+      }
+   });
+});
+
+
+let dark = document.querySelector(".darck");
+
+let them = 'light';
+
+dark.addEventListener('click', function () {
+   if (them === "dark") {
+      document.body.style.background = "#fff"
+      them = 'light';
+      dark.style.backgroundColor = "#000"
+      dark.style.color = "#000"
+
+
+
+     
+
+  } else if (them == "light") {
+      document.body.style.background = "#212529"
+      them = 'dark';
+      dark.style.backgroundColor = "#fff"
+      dark.style.color = "#fff"
+  }
+
+})

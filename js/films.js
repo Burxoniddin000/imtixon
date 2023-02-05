@@ -404,10 +404,11 @@ var films = [
       genres: ["Music", "Documentary"],
    },
 ];
-
+let elInput = document.querySelector(".input");
 let newflim = document.querySelector(".films");
+
 function arr() {
-   newflim.textContent ="";
+   newflim.textContent = "";
    films.forEach((film) => {
       let dat = new Date(film.release_date);
       let year = dat.getFullYear();
@@ -445,7 +446,7 @@ function arr() {
        </div>
    </div>
 </li>`
-     
+
       newflim.appendChild(li);
    })
 }
@@ -468,4 +469,15 @@ newflim.addEventListener("click", function (evt) {
       films = retur;
       arr(films)
    }
+})
+
+elInput.addEventListener('input', () => {
+   let value = elInput.value;
+   let sorarr = [];
+   films.forEach((search) => { 
+         if (search.title.toLocaleString().includes(value.toLocaleString())) {
+            sorarr.push(search)
+         }
+   })
+   arr(sorarr)
 })

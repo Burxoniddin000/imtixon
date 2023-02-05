@@ -516,10 +516,6 @@ dark.addEventListener('click', function () {
       dark.style.backgroundColor = "#000"
       dark.style.color = "#000"
 
-
-
-     
-
   } else if (them == "light") {
       document.body.style.background = "#212529"
       them = 'dark';

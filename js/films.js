@@ -404,7 +404,6 @@ var films = [
       genres: ["Music", "Documentary"],
    },
 ];
-document.body.style.background="#212529"
 let elInput = document.querySelector(".input");
 let newflim = document.querySelector(".films");
 let Janer = document.querySelector("#janir");
@@ -443,7 +442,7 @@ function move(array) {
          <h2 class="tile">Nomi:${film.title}</h2>
          <p class="taxt"> Genres:${film.genres}</p>
          <p class="fullyers">${rezlatYers}</p>
-         <button data-id="${id}" class="btn bg-danger text-light">Menga yoqmadi</button>
+         <button data-id="${id}" class="btnl bg-danger text-light">Menga yoqmadi</button>
        </div>
    </div>
 </li>`
@@ -456,9 +455,7 @@ function move(array) {
 move(films)
 
 newflim.addEventListener("click", function (evt) {
-
    let namber = evt.target
-
    if (namber.className.includes("btn")) {
       let id = namber.dataset.id
       let retur = [];
@@ -487,7 +484,6 @@ elInput.addEventListener("input", () => {
 });
 
 
-
 Janer.addEventListener("change", () => {
    let value = Janer.value;
    let all = [];
@@ -505,6 +501,10 @@ Janer.addEventListener("change", () => {
 });
 
 
+
+
+
+let navbar = document.querySelector("#offcanvasExample")
 let dark = document.querySelector(".darck");
 
 let them = 'light';
@@ -515,12 +515,16 @@ dark.addEventListener('click', function () {
       them = 'light';
       dark.style.backgroundColor = "#000"
       dark.style.color = "#000"
+      navbar.style.backgroundColor = "#fff"
+      navbar.style.color = "#000"
 
-  } else if (them == "light") {
+   } else if (them == "light") {
       document.body.style.background = "#212529"
       them = 'dark';
       dark.style.backgroundColor = "#fff"
       dark.style.color = "#fff"
-  }
+      navbar.style.color = "#fff"
+      navbar.style.backgroundColor = "#000"
+   }
 
 })

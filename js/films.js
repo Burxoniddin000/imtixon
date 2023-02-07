@@ -440,7 +440,7 @@ function move(array) {
        <img class="img" src=${film.poster} alt="">
        <div class="div">
          <h2 class="tile">Nomi:${film.title}</h2>
-         <p class="taxt"> Genres:${film.genres}</p>
+         <h3 class="taxt"> Genres:${film.genres}</h3>
          <p class="fullyers">${rezlatYers}</p>
          <button data-id="${id}" class="btnl bg-danger text-light">Menga yoqmadi</button>
        </div>

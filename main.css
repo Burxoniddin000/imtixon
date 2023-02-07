@@ -24,9 +24,12 @@ li {
 
 .films {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
     gap: 10px;
+    padding: 0;
 }
 
 .item {
@@ -132,4 +135,95 @@ li {
 
 .sun{
     display: none;
+}
+
+@media screen and (max-width:1200px){
+    .img {
+        padding-bottom: 12px;
+        width: 270px;
+        height: 370px;
+        border-radius: 7px;
+        
+    } 
+    .item {
+        width: 290px;
+        height: 550px;
+        text-align: center;
+        border: 2px solid rgb(27, 25, 25);
+        background-color: rgb(27, 25, 25);
+        box-sizing: 0 0 5px 5px #fff;
+        padding: 5px;
+        border-radius: 8px;
+    }
+    .taxt{
+        font-size: 13px;
+    }
+    .fullyers{
+        font-size: 13px;
+    }
+    .div{
+        height: 160px;
+    }
+}
+
+@media screen and (max-width:995px){
+    .img {
+        padding-bottom: 10px;
+        width: 185px;
+        height: 290px;
+        border-radius: 5px;
+        
+    } 
+    .item {
+        width: 200px;
+        height: 470px;
+        text-align: center;
+        border: 2px solid rgb(27, 25, 25);
+        background-color: rgb(27, 25, 25);
+        box-sizing: 0 0 5px 5px #fff;
+        padding: 5px;
+        border-radius: 8px;
+    }
+    .taxt{
+        font-size: 10px;
+    }
+    .fullyers{
+        font-size: 12px;
+    }
+    .div{
+        height: 160px;
+    }
+    .btnl{
+        font-size: 11px;
+        width: 100px;
+    }
+}
+@media screen and (max-width:770px){
+    .img {
+        padding-bottom: 8px;
+        width: 120px;
+        height: 170px;
+        border-radius: 5px;
+        
+    } 
+    .item {
+        width: 135px;
+        height: 410px;
+        text-align: center;
+        border: 2px solid rgb(27, 25, 25);
+        background-color: rgb(27, 25, 25);
+        box-sizing: 0 0 5px 5px #fff;
+        padding: 5px;
+        border-radius: 8px;
+    }
+    .fullyers{
+        font-size: 12px;
+    }
+    .div{
+        height: 205px;
+        overflow-wrap: break-word;
+    }
+    .btnl{
+      left: 10px;
+    }
 }

@@ -503,7 +503,9 @@ buut.addEventListener("click", (evt) => {
 
 
 let navbar = document.querySelector("#offcanvasExample")
-let dark = document.querySelector(".darck");
+let sun = document.querySelector(".sun");
+let moon = document.querySelector(".mon");
+let dark = document.querySelector('.darck')
 
 let them = 'light';
 
@@ -511,16 +513,16 @@ dark.addEventListener('click', function () {
    if (them === "dark") {
       document.body.style.background = "#fff"
       them = 'light';
-      dark.style.backgroundColor = "#000"
-      dark.style.color = "#000"
+      moon.style.display ='block';
+      sun.style. display  ='none';
       navbar.style.backgroundColor = "#fff"
       navbar.style.color = "#000"
 
    } else if (them == "light") {
       document.body.style.background = "#212529"
       them = 'dark';
-      dark.style.backgroundColor = "#fff"
-      dark.style.color = "#fff"
+      moon.style.display ='none';
+      sun.style. display  ='block';
       navbar.style.color = "#fff"
       navbar.style.backgroundColor = "#212529"
    }

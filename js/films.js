@@ -406,7 +406,7 @@ var films = [
 ];
 let elInput = document.querySelector(".input");
 let newflim = document.querySelector(".films");
-let Janer = document.querySelector("#janir");
+let buut = document.querySelector("#butnm");
 
 function move(array) {
    newflim.textContent = "";
@@ -484,8 +484,9 @@ elInput.addEventListener("input", () => {
 });
 
 
-Janer.addEventListener("change", () => {
-   let value = Janer.value;
+buut.addEventListener("click", (evt) => {
+
+   let value = evt.target.dataset.id;
    let all = [];
    let genres = [];
 
@@ -499,9 +500,6 @@ Janer.addEventListener("change", () => {
       }
    });
 });
-
-
-
 
 
 let navbar = document.querySelector("#offcanvasExample")
@@ -528,3 +526,5 @@ dark.addEventListener('click', function () {
    }
 
 })
+
+

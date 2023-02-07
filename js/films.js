@@ -524,7 +524,7 @@ dark.addEventListener('click', function () {
       dark.style.backgroundColor = "#fff"
       dark.style.color = "#fff"
       navbar.style.color = "#fff"
-      navbar.style.backgroundColor = "#000"
+      navbar.style.backgroundColor = "#212529"
    }
 
 })
